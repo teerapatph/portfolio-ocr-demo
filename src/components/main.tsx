@@ -202,7 +202,7 @@ const Main = () => {
             <img
               src="/demo-logo.svg"
               alt="Demo Logo"
-              className="w-32 h-32 object-contain drop-shadow-lg"
+              className="h-24 w-auto object-contain drop-shadow-lg"
             />
           </div>
           {/* <span className="text-4xl sm:text-5xl font-extrabold text-green-800 tracking-tight drop-shadow-xl leading-tight">DEMO OCR</span> */}
