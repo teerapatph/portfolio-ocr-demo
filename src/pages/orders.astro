@@ -1,0 +1,44 @@
+---
+// 1. Import Layout หลักของคุณ
+import Layout from '../layouts/Layout.astro';
+import { Toaster } from "@/components/ui/sonner";
+
+// 2. Import React component ที่เราเพิ่งสร้าง
+import { OrderForm } from '../components/orders/OrderForm.tsx';
+---
+
+<Layout title="Order Recommend">
+
+  {/* 1. Wrapper หลัก: จัดการ Background และการจัดเรียงแนวตั้ง (Flex Column) */}
+  <div class="min-h-screen w-full bg-gradient-to-br from-green-100 via-white to-green-200 flex flex-col items-center py-10 px-4 relative">
+
+    {/* Navigation to Main */}
+    <div class="absolute top-4 left-4 z-20">
+      <a href="/">
+        <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-semibold ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 border hover:text-accent-foreground h-10 px-4 py-2 bg-white/80 backdrop-blur-sm border-green-300 text-green-800 hover:bg-green-50 shadow-sm">
+          ⬅️ Receipt OCR
+        </button>
+      </a>
+    </div>
+
+    {/* 2. ส่วน Logo: ใส่รูป demo-logo.svg ตรงนี้ */}
+    <div className="mb-8 shrink-0">
+      <img 
+        src="/demo-logo.svg" 
+        alt="Demo Logo" 
+        className="h-20 w-auto object-contain drop-shadow-sm" 
+      />
+    </div>
+
+    {/* 3. ส่วน Card Form: เรียกใช้ React Component */}
+    {/* กำหนดความกว้างสูงสุด (max-w) ที่นี่ เพื่อคุมขนาด Card */}
+    <div className="w-full max-w-5xl z-10">
+      <OrderForm client:load />
+    </div>
+
+    {/* 4. Footer: ย้ายจาก React มาไว้ที่นี่ (หรือจะไว้ใน Layout หลักก็ได้) */}
+    <footer className="fixed bottom-0 left-0 w-full py-4 text-gray-400 text-xs text-center select-none">
+      Demo Company &copy; 2025. All rights reserved.
+    </footer>
+    <Toaster client:load />
+</Layout>
