@@ -1,99 +1,58 @@
-![Build Status](https://gitlab.com/pages/astro/badges/master/build.svg)
+# 🧾 AI Receipt OCR & Order Recommendation System (Frontend Demo)
 
----
+A modern, fast, and interactive frontend demonstration of an AI-powered Receipt OCR and Order Recommendation system. Originally built during an internship, this project has been refactored into a completely standalone frontend application (with simulated API calls) to showcase the UI, UX, and state management logic without requiring a backend.
 
-Example [Astro](https://astro.build) website using GitLab Pages.
+## 🚀 Features
 
-Learn more about GitLab Pages at https://pages.gitlab.io and the official
-documentation https://docs.gitlab.com/ce/user/project/pages/.
+- **Receipt OCR Upload Simulation (`/`)**: 
+  - Drag-and-drop or click to upload receipt images.
+  - Interactive preview with zoom and pan support.
+  - Simulated backend processing with progress bars and polling.
+  - Extracted data is presented in an intuitive, categorized table (Our Products vs. Other Products).
+  - *Includes a **1-Click Demo** button to instantly populate and simulate the extraction process.*
 
----
+- **AI Order Recommendations (`/orders`)**:
+  - Complex multi-step form for generating sales targets and AI recommendations based on customer profiles.
+  - Dynamic comboboxes, filtering, and manual adjustments (Best Seller %, etc.).
+  - Simulated recommendation API that dynamically returns tailored product lists.
+  - *Includes a **1-Click Demo Fill** button to instantly populate form states and trigger the AI flow.*
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+## 🛠️ Tech Stack
 
-- [Project Structure](#project-structure)
-- [Add base path in Astro when unique domain is disabled](#add-base-path-in-astro-when-unique-domain-is-disabled)
-- [GitLab CI](#gitlab-ci)
-- [Building locally](#building-locally)
-- [GitLab User or Group Pages](#gitlab-user-or-group-pages)
-- [Did you fork this project?](#did-you-fork-this-project)
+- **Framework**: [Astro](https://astro.build/)
+- **UI Library**: React 18
+- **Styling**: Tailwind CSS
+- **Components**: [shadcn/ui](https://ui.shadcn.com/) (Radix UI)
+- **Icons**: Lucide React
+- **Language**: TypeScript
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+## 📦 Getting Started
 
-## Project Structure
+To run this demo locally on your machine:
 
-Inside your Astro project, you'll see the following folders and files:
+### 1. Prerequisites
+Ensure you have [Node.js](https://nodejs.org/) installed (v18 or higher recommended).
 
-```text
-/
-├── static/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+### 2. Installation
+Clone your repository and install the dependencies:
+```bash
+git clone <your-new-repo-url>
+cd portfolio-ocr
+npm install
 ```
 
-There’s nothing special about `src/components/`, but that’s where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## Add base path in Astro when unique domain is disabled
-
-If you [disable the unique domain](https://docs.gitlab.com/user/project/pages/#unique-domains),
-the site will be hosted under `yourname.gitlab.io/examplerepository/`,
-you will need to configure Astro to use the `base` path.
-
-In `astro.config.mjs`, the value for `base` should be your project’s name,
-starting with a forward slash - for example, `/examplerepository`.
-This ensures Astro understands that your website’s root is `/examplerepository` instead of the default `/`,
-especially when your project is hosted at `https://gitlab.com/yourname/examplerepository/`.
-
-```js:title=astro.config.mjs
-export default defineConfig({
-    base: '/examplerepository',
-});
+### 3. Start the Development Server
+```bash
+npm run dev
 ```
+The app will start on `http://localhost:4321`.
 
-## GitLab CI
+## 💡 How to use the Demo
 
-This project's static Pages are built by [GitLab CI][ci], following the steps
-defined in [`.gitlab-ci.yml`](.gitlab-ci.yml)
+This project has been specifically configured for fast portfolio presentations:
+1. Navigate to the **Home page** (`/`). Click the **"🚀 1-Click Demo Upload & Process"** button to instantly simulate the receipt extraction process.
+2. Click the **"AI Recommendations ➔"** button in the top right to switch features.
+3. On the **Recommendations page** (`/orders`), click **"🚀 1-Click Demo Fill"** to instantly fill out the complex form state, then hit **"Recommend"** to see the simulated AI results.
 
-## Building locally
-
-To work locally with this project, you'll have to follow the steps below:
-
-1. Fork, clone or download this project
-1. Install dependencies: `npm install`
-1. Preview your project while making changes: `npm run start`
-1. Add content
-1. To simulate a static build, run `npm run build`. This is not required.
-1. Commit & push your changes. GitLab will tigger a static build as instructed by the `.gitlab-ci.yml`
-
-Read more at Astro's [documentation](https://docs.astro.build/en/getting-started/).
-
-## GitLab User or Group Pages
-
-To use this project as your user/group website, you will need one additional
-step: just rename your project to `namespace.gitlab.io`, where `namespace` is
-your `username` or `groupname`. This can be done by navigating to your
-project's **Settings**.
-
-Read more about [user/group Pages][userpages] and [project Pages][projpages].
-
-## Did you fork this project?
-
-If you forked this project for your own use, please go to your project's
-**Settings** and remove the forking relationship, which won't be necessary
-unless you want to contribute back to the upstream project.
-
-[ci]: https://about.gitlab.com/gitlab-ci/
-[<project>]: http://link-to-project-main-page
-[install]: http://link-to-install-page
-[documentation]: http://link-to-main-documentation-page
-[userpages]: https://docs.gitlab.com/ce/user/project/pages/introduction.html#user-or-group-pages
-[projpages]: https://docs.gitlab.com/ce/user/project/pages/introduction.html#project-pages
+## 🔒 Security Note
+This project has been scrubbed of all proprietary company data, logos, real API endpoints, and internal business logic to ensure zero data leaks. All data presented in this demo (customers, products, SKUs) is entirely mocked via frontend timeouts.
